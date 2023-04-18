@@ -73,7 +73,7 @@ li {
 }
 
 /* Heading */
-.title,
+.task-title,
 .add-item__new-task-label {
   color: #333;
   font-weight: 700;
