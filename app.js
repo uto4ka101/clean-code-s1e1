@@ -112,9 +112,9 @@ const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   const editButton = taskListItem.querySelector('.edit');
   const deleteButton = taskListItem.querySelector('.delete');
 
-  editButton.addEventListener('click', editTask);
-  deleteButton.addEventListener('click', deleteTask);
-  checkBox.addEventListener('click', checkBoxEventHandler);
+  editButton.onclick= editTask;
+  deleteButton.onclick= deleteTask;
+  checkBox.onclick= checkBoxEventHandler;
 }
 
 for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
