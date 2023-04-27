@@ -49,7 +49,8 @@ ul {
   padding: 0;
 }
 
-li {
+li, 
+h3 {
   list-style: none;
 }
 
