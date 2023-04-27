@@ -14,7 +14,8 @@ const createNewTaskElement = function (taskString) {
   const deleteButtonImg = document.createElement('img');
 
   listItem.className = 'task-item';
-    label.innerText = taskString;
+
+  label.innerText = taskString;
   label.className = 'task-label';
 
   checkBox.type = 'checkbox';
@@ -33,8 +34,8 @@ const createNewTaskElement = function (taskString) {
   listItem.appendChild(checkBox);
   listItem.appendChild(label);
   listItem.appendChild(editInput);
-Expand All
-	@@ -57,139 +39,88 @@ var createNewTaskElement = function (taskString) {
+  listItem.appendChild(editButton);
+  listItem.appendChild(deleteButton);
   return listItem;
 }
 
@@ -59,7 +60,8 @@ const editTask = function () {
   const label = listItem.querySelector('label');
   const editBtn = listItem.querySelector('.edit');
   const containsClass = listItem.classList.contains('edit-mode');
-      if (containsClass) {
+
+  if (containsClass) {
     label.innerText = editInput.value;
     editBtn.innerText = 'Edit';
   } else {
@@ -110,9 +112,9 @@ const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   const editButton = taskListItem.querySelector('.edit');
   const deleteButton = taskListItem.querySelector('.delete');
 
-  editButton.addEventListener('click', editTask);
-  deleteButton.addEventListener('click', deleteTask);
-  checkBox.addEventListener('click', checkBoxEventHandler);
+  editButton.onclick= editTask;
+  deleteButton.onclick= deleteTask;
+  checkBox.onclick= checkBoxEventHandler;
 }
 
 for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
